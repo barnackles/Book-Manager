@@ -7,6 +7,8 @@ public interface BookService {
 
     public List<Book> getList();
 
+    public Book getBook(Long id);
+
     public void addBook(Book book);
 
     public void deleteBook(Long id);

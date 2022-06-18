@@ -24,6 +24,13 @@ public class MockBookService implements BookService{
         return list;
     }
 
+    @Override
+    public Book getBook(Long id) {
+       return list.stream()
+                .filter(t -> id.equals(t.getId()))
+                .findFirst().orElse(null);
+    }
+
     public void addBook(Book book) {
         book.setId(nextId);
         list.add(book);
