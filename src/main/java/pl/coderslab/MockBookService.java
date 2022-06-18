@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class MockBookService {
@@ -27,5 +28,11 @@ public class MockBookService {
         book.setId(nextId);
         list.add(book);
         nextId++;
+    }
+
+    public void deleteBook(Long id) {
+        list = list.stream().
+                filter(t -> !id.equals(t.getId()))
+                .collect(Collectors.toList());
     }
 }
