@@ -29,4 +29,9 @@ public class BookController {
         mockBookService.deleteBook(id);
     }
 
+    @PutMapping("/books/{id}")
+    public void deleteBook(@PathVariable Long id, @RequestBody Book book){
+        mockBookService.updateBook(id, book);
+    }
+
 }

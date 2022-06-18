@@ -35,4 +35,19 @@ public class MockBookService {
                 filter(t -> !id.equals(t.getId()))
                 .collect(Collectors.toList());
     }
+
+    public void updateBook(Long id, Book book) {
+
+        Long idFromList = -1L;
+        int index = -1;
+
+        for (Book b : list ) {
+            if (id.equals(b.getId())) {
+                index = list.indexOf(b);
+                idFromList = b.getId();
+            }
+        }
+        book.setId(idFromList);
+        list.set(index, book);
+    }
 }
