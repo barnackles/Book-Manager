@@ -22,4 +22,10 @@ public class MockBookService {
     public List<Book> getList() {
         return list;
     }
+
+    public void addBook(Book book) {
+        book.setId(nextId);
+        list.add(book);
+        nextId++;
+    }
 }
