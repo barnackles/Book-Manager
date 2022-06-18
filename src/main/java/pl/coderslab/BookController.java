@@ -8,30 +8,30 @@ import java.util.List;
 @RequestMapping("/books")
 public class BookController {
 
-    MockBookService mockBookService;
+   BookService bookService;
 
-    public BookController(MockBookService mockBookService) {
-        this.mockBookService = mockBookService;
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
     }
 
     @GetMapping("/books")
     public List<Book> showAllBooks() {
-        return mockBookService.getList();
+        return bookService.getList();
     }
 
     @PostMapping("/books")
     public void addBook(@RequestBody Book book){
-        mockBookService.addBook(book);
+        bookService.addBook(book);
     }
 
     @DeleteMapping("/books/{id}")
     public void deleteBook(@PathVariable Long id){
-        mockBookService.deleteBook(id);
+        bookService.deleteBook(id);
     }
 
     @PutMapping("/books/{id}")
     public void deleteBook(@PathVariable Long id, @RequestBody Book book){
-        mockBookService.updateBook(id, book);
+        bookService.updateBook(id, book);
     }
 
 }

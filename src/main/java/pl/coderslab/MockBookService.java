@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class MockBookService {
+public class MockBookService implements BookService{
     private List<Book> list;
     private static Long nextId = 4L;
 
