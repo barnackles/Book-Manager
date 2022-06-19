@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class MockBookService implements BookService{
+public class MockBookService implements BookService {
     private List<Book> list;
     private static Long nextId = 4L;
 
@@ -26,9 +26,10 @@ public class MockBookService implements BookService{
 
     @Override
     public Book getBook(Long id) {
+
        return list.stream()
                 .filter(t -> id.equals(t.getId()))
-                .findFirst().orElse(null);
+                .findFirst().orElse(new Book());
     }
 
     public void addBook(Book book) {
