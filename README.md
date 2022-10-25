@@ -1,3 +1,5 @@
-# Workshop-5
-REST API app
-Simple REST application - book manager
+#Book Manager (Workshop 5)
+
+Simple REST CRUD with Spring.
+Data is stored locally in ArrayList.
+App utilizes streamApi and Optionals.
