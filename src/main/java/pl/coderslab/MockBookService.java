@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,11 +26,11 @@ public class MockBookService implements BookService {
     }
 
     @Override
-    public Book getBook(Long id) {
+    public Optional<Book> getBook(Long id) {
 
        return list.stream()
                 .filter(t -> id.equals(t.getId()))
-                .findFirst().orElse(new Book());
+                .findFirst();
     }
 
     public void addBook(Book book) {
